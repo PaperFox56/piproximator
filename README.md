@@ -20,7 +20,7 @@ In the the next iteration, I will implement a more advanced algorithm allowing t
 Clone this git repo:
 
 ```bash
-git clone https://github.com/paperfox56/piproximator
+git clone https://github.com/PaperFox56/piproximator
 ```
 
 or simply download the python script.
