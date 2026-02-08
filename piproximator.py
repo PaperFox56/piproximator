@@ -38,7 +38,13 @@ def compute_pi(numerator: int, denominator: int, precision:int) -> int:
 The algorithm works as follows.
 
 First, we troncate the denominator to fit in the given precision, the alogoritm stops once no better aproximation can be found without adding a digit to the denominator.
-    """
+
+Next we need to detect if the numerator is smaller than the denominator, in which case we need to increase it to the next level of magnitude. This is done by adding a digit at the end while staying as close to pi as posible.
+
+The same is done if the denominator is 10 times (or more) smaller than the numerator.
+
+Finally, when the two numbers have in same relative size, we just add one digit to each number.
+"""
     denom_digit_count = int(log10(denominator)) + 1
 
     if denom_digit_count > precision:
@@ -49,6 +55,7 @@ First, we troncate the denominator to fit in the given precision, the alogoritm 
         denom_digit_count = int(log10(denominator)) + 1
         ratio = numerator / denominator
         
+
         if ratio < 1:  # We need to buff the numerator
             best = -1
             cost = ratio * 100  # magic
@@ -88,10 +95,10 @@ First, we troncate the denominator to fit in the given precision, the alogoritm 
             best = (-1, -1)
             cost = 100  # any number above 10 is honestly fine here
 
-            for i in range(1000):
-                d = denominator * 1000 + i
-                for j in range(1000):
-                    n = numerator * 1000 + j
+            for i in range(10):
+                d = denominator * 10 + i
+                for j in range(10):
+                    n = numerator * 10 + j
                     n_cost = abs(n / d - pie)
                 
                     if n_cost < cost:
@@ -118,7 +125,7 @@ if __name__ == "__main__":
 
         return result
 
-    num, denom, prec = 3, 1, 10
+    #num, denom, prec = 3, 1, 10
 
     num, denom, prec = get_integer_input([
         "the most significant digits of the numerator",
