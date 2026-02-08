@@ -21,6 +21,7 @@ Clone this git repo:
 
 ```bash
 git clone https://github.com/PaperFox56/piproximator
+cd piproximator
 ```
 
 or simply download the python script.
@@ -34,5 +35,6 @@ You can start it with a python interpreter
 or make it executable and start it as any program:
 
 ```
+chmod +x piproximator.py
 ./piproximator.py
 ```
