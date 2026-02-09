@@ -8,12 +8,6 @@ The usage is simple. When you launch the program, you will be promted to give tw
 The first number given is used as most significative part of the numerator while the second digit is used for the denominator. The program then computes the best approximation of pi by adding digits to each part of the fraction.
 
 
-### Limits
-
-The current version uses a naive algorithm where the digits are chosen one after another. This cause really poor precision in the approximation.
-
-In the the next iteration, I will implement a more advanced algorithm allowing to choose a digit based while predicting the following ones in advance, thus increasing precision.
-
 
 # Usage
 
